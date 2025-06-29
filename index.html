@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anime Wrld Wars | ANICADE | Official Hub</title>
   <style>
     :root {
-      --bg-color: #0d0d0d;
-      --text-color: #eaeaea;
-      --accent-red: #d50000;
-      --accent-blue: #2979ff;
-      --gray-dark: #1a1a1a;
-      --gray-light: #333333;
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-red: #e53935;
+      --accent-blue: #1e88e5;
+      --accent-yellow: #fbc02d;
+      --gray-dark: #212121;
+      --gray-light: #f5f5f5;
     }
     body {
       margin: 0;
@@ -26,11 +26,11 @@
       font-size: 2.5rem;
       font-weight: 900;
       letter-spacing: 3px;
-      color: var(--accent-red);
-      text-shadow: 0 0 10px var(--accent-red);
+      color: var(--accent-yellow);
+      text-shadow: 0 0 10px var(--accent-yellow);
     }
     nav {
-      background-color: var(--gray-light);
+      background-color: var(--accent-blue);
       display: flex;
       justify-content: center;
       gap: 2.5rem;
@@ -38,14 +38,14 @@
       font-weight: 700;
     }
     nav a {
-      color: var(--text-color);
+      color: var(--bg-color);
       text-decoration: none;
       font-size: 1.2rem;
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: var(--accent-blue);
-      text-shadow: 0 0 10px var(--accent-blue);
+      color: var(--accent-yellow);
+      text-shadow: 0 0 10px var(--accent-yellow);
     }
     main {
       max-width: 1000px;
@@ -59,8 +59,15 @@
       border-left: 6px solid var(--accent-red);
       padding-left: 1rem;
       margin-bottom: 1rem;
-      font-size: 2rem;
-      text-shadow: 0 0 8px var(--accent-red);
+      font-size: 1.8rem;
+      color: var(--accent-red);
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
     }
     p, ul {
       font-size: 1.1rem;
@@ -93,6 +100,11 @@
       color: var(--accent-blue);
       text-shadow: 0 0 6px var(--accent-blue);
     }
+    .update-item img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -100,6 +112,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#updates">Updates</a>
     <a href="#community">Community</a>
     <a href="#media">Media</a>
     <a href="#events">Events</a>
@@ -108,61 +121,24 @@
   <main>
     <section id="home">
       <h2>Welcome to Anime Wrld Wars | ANICADE |</h2>
-      <p>🎌 This is more than a channel — it's a <em>Wrld</em> of anime passion, creativity, and connection. Whether you're a chill fan or a fierce anime warrior, you belong here.</p>
-      <ul>
-        <li>💬 Talk anime, edits, theories & waifus</li>
-        <li>🎨 Share memes, art, and music</li>
-        <li>🗓️ Stay updated with events, battles, and contests</li>
-        <li>🎉 Celebrate milestones with epic community moments</li>
-      </ul>
-      <p>🥂 <strong>COMING UP: 27th July — our 1-Year Anniversary!</strong> Don’t miss the <strong>EPIC GIVEAWAY</strong> — exclusive rewards, anime drops, and surprises!</p>
+      <p>🎌 Your ultimate anime hub. Dive into daily anime updates, epic memes, waifu spotlights, PFP drops, fan art showcases & exclusive content.</p>
+      <p>⚡ Whether you're here to chill, battle, or vibe — join the anime revolution today!</p>
       <a href="https://bit.ly/AnimeANICADE" target="_blank" class="button">Visit the Official Hub</a>
-    </section>
-  <section id="about">
-      <h2>About ANICADE</h2>
-      <p><strong>Anime Wrld Wars | ANICADE</strong> is the ultimate hub for anime lovers, creators, and warriors. ⚔️ Dive into anime battles, 🔥 share edits & art, 🧠 join deep discussions, and 📣 get the latest updates. Whether you're a casual fan or hardcore otaku — this is YOUR wrld.</p>
-    </section>
+    </section><section id="updates">
+  <h2>Latest Anime Updates</h2>
+  <div class="update-item">
+    <h3>🔥 Solo Leveling Finale Airs!</h3>
+    <p>The intense final episode of Solo Leveling Season 1 just aired! Sung Jin-Woo delivers a mind-blowing battle against the Ant King. Fans are calling it the best episode yet.</p>
+    <img src="https://i.imgur.com/YOUR_IMAGE_ID.jpg" alt="Solo Leveling Final Fight" />
+  </div>
 
-    <section id="community">
-      <h2>Community Links</h2>
-      <ul>
-        <li><a href="https://chat.whatsapp.com/EzBa9R9BocWFrkq91zeCvW?mode=ac_t" target="_blank">WhatsApp Group</a></li>
-        <li><a href="https://discord.gg/yQkthryT" target="_blank">Discord Server</a></li>
-        <li><a href="https://t.me/Tresfor_AnimeWrldllWars" target="_blank">Telegram Group</a></li>
-        <li><a href="https://t.me/Tresfor_anime_wrld_wars" target="_blank">Telegram Channel</a></li>
-        <li><a href="https://t.me/TresforwrldBot" target="_blank">Telegram Anime Bot</a></li>
-      </ul>
-    </section>
+  <div class="update-item">
+    <h3>🍥 Naruto Spin-Off Announced!</h3>
+    <p>A new anime centered around Minato Namikaze, the Yellow Flash, has been announced for Fall 2025. Expect flashbacks, action, and untold stories from Konoha!</p>
+    <img src="https://i.imgur.com/YOUR_IMAGE_ID2.jpg" alt="Minato Spin-Off" />
+  </div>
+</section>
 
-    <section id="media">
-      <h2>Follow Us on Social Media</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/@AnimeWrldWars_ANICADE" target="_blank">YouTube</a></li>
-        <li><a href="https://vm.tiktok.com/ZMHbNe8UXTHm2-iUteL/" target="_blank">TikTok</a></li>
-        <li><a href="https://www.instagram.com/reel/DK_waUqNHeE/" target="_blank">Instagram</a></li>
-        <li><a href="https://facebook.com/groups/1158584398690857/" target="_blank">Facebook Group</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=100091930449057" target="_blank">Facebook Page</a></li>
-      </ul>
-    </section>
-
-    <section id="events">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li><strong>🎉 1-Year Anniversary:</strong> 27th July 2025 — Celebrate with our epic giveaway!</li>
-        <li><strong>ANICADE Season 2 Battle:</strong> Registration opens July 15th</li>
-        <li><strong>Fan Art Contest:</strong> Submission deadline August 1st</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact & Extra Links</h2>
-      <ul>
-        <li><strong>Email:</strong> tresforzulu@gmail.com</li>
-        <li><a href="https://ngl.link/anime_wrld_wars_anicade_admin11" target="_blank">Anonymous Feedback (NGL)</a></li>
-        <li><a href="https://webnovel.com/profile/4501474390" target="_blank">Webnovel Profile</a></li>
-        <li><a href="https://bit.ly/AnimeANICADE" target="_blank">Main Website</a></li>
-      </ul>
-    </section>
   </main>
   <footer>
     © 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
