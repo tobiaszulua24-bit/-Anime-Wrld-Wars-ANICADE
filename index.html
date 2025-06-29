@@ -60,14 +60,20 @@ updated_html = '''<!DOCTYPE html>
     }
     section {
       margin-bottom: 3.5rem;
-    }
-    h2 {
-      border-left: 6px solid var(--accent-red);
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      text-shadow: 0 0 8px var(--accent-red);
-    }
+    }h2 {
+  border-left: 6px solid var(--accent-red);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-shadow: 0 0 8px var(--accent-red);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
     p, ul {
       font-size: 1.1rem;
       line-height: 1.6;
