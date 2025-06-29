@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+# Re-define path after code state reset
+updated_html_path = Path("/mnt/data/index.html")
+
+# Updated HTML content with new welcome and anniversary details
+updated_html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -108,50 +114,24 @@
   <main>
     <section id="home">
       <h2>Welcome to Anime Wrld Wars | ANICADE |</h2>
-      <p>Your official hub to explore, discuss, and battle in the world of anime! Connect with fans, share your creations, and stay updated on the latest ANICADE events.</p>
-      <a href="https://whatsapp.com/channel/0029VafKed7LY6d7ECh4Dv3x" target="_blank" class="button">Join Our WhatsApp Channel</a>
-    </section>
-
-    <section id="about">
-      <h2>About ANICADE</h2>
-      <p>ANICADE is a competitive anime-themed battle event where fans showcase their skills, creativity, and passion. Participate in challenges, vote for winners, and be part of the excitement!</p>
-      <p><strong>How to Join:</strong> Join our WhatsApp channel, stay updated, and follow event announcements. All skill levels welcome!</p>
-    </section>
-
-    <section id="community">
-      <h2>Community Hub</h2>
+      <p>🎌 This is more than a channel — it's a <em>Wrld</em> of anime passion, creativity, and connection. Whether you're a chill fan or a fierce anime warrior, you belong here.</p>
       <ul>
-        <li>Join discussions on our <a href="https://whatsapp.com/channel/0029VafKed7LY6d7ECh4Dv3x" target="_blank" style="color: var(--accent-blue);">WhatsApp Channel</a></li>
-        <li>Connect on Discord (link coming soon)</li>
-        <li>Share anime edits, fan art, and memes</li>
+        <li>💬 Talk anime, edits, theories & waifus</li>
+        <li>🎨 Share memes, art, and music</li>
+        <li>🗓️ Stay updated with events, battles, and contests</li>
+        <li>🎉 Celebrate milestones with epic community moments</li>
       </ul>
-    </section>
-
-    <section id="media">
-      <h2>Media Gallery</h2>
-      <p>Explore and contribute your best anime edits, fan art, music collaborations, and more. Showcase your talent to the community!</p>
-    </section>
-
-    <section id="events">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li><strong>ANICADE Season 2 Battle:</strong> Registration opens July 15th</li>
-        <li><strong>Fan Art Contest:</strong> Submission deadline August 1st</li>
-        <li><strong>Community Hangout:</strong> Live on Discord, July 25th</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact & Follow</h2>
-      <p>Stay connected through our social platforms:</p>
-      <ul>
-        <li><a href="https://tiktok.com/@yourpage" target="_blank" style="color: var(--accent-blue);">TikTok</a></li>
-        <li><a href="https://whatsapp.com/channel/0029VafKed7LY6d7ECh4Dv3x" target="_blank" style="color: var(--accent-blue);">WhatsApp Channel</a></li>
-      </ul>
+      <p>🥂 <strong>COMING UP: 27th July — our 1-Year Anniversary!</strong> Don’t miss the <strong>EPIC GIVEAWAY</strong> — exclusive rewards, anime drops, and surprises!</p>
+      <a href="https://bit.ly/AnimeANICADE" target="_blank" class="button">Visit the Official Hub</a>
     </section>
   </main>
   <footer>
-    © 2025 Anime Wrld Wars | ANICADE |. BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
+    © 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
   </footer>
 </body>
 </html>
+'''
+
+# Save the updated HTML content
+updated_html_path.write_text(updated_html)
+updated_html_path.name
