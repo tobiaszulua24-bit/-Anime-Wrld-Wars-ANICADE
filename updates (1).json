@@ -1,5 +1,4 @@
-
-fixed_updates = [
+ [
     {
         "title": "🔥 Solo Leveling Finale!",
         "description": "Mind-blowing final episode against the Ant King!",
@@ -30,11 +29,5 @@ fixed_updates = [
         "description": "The curse wars continue!",
         "image": "https://i.imgur.com/dXOY2mv.jpg"
     }
-]
 
-# Save the corrected JSON
-fixed_file_path = "/mnt/data/updates.json"
-with open(fixed_file_path, "w") as f:
-    json.dump(fixed_updates, f, indent=2)
 
-fixed_file_path
