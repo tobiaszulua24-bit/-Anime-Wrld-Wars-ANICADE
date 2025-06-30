@@ -182,4 +182,32 @@
       <h2>Contact Us</h2>
       <p>Got questions, feedback, or ideas? Reach out anytime!</p>
       <ul>
-        <li><strong>Email:</strong> tresforzulu@gmail.com <
+        <li><strong>Email:</strong> <a href="mailto:tresforzulu@gmail.com">tresforzulu@gmail.com</a></li>
+        <li><strong>Submit on NGL:</strong> <a href="https://ngl.link/anime_wrld_wars_anicade_admin11" target="_blank">Send Feedback</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    © 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
+  </footer>
+
+  <script>
+    fetch('updates.json')
+      .then(response => response.json())
+      .then(updates => {
+        const container = document.getElementById('updates-container');
+        updates.forEach(update => {
+          const div = document.createElement('div');
+          div.className = 'update-item';
+          div.innerHTML = `
+            <h3>${update.title}</h3>
+            <p>${update.description}</p>
+            ${update.image ? `<img src="${update.image}" alt="${update.title}" />` : ''}
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => console.error('Error loading updates:', error));
+  </script>
+</body>
+</html>
