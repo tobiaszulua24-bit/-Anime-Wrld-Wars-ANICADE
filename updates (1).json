@@ -1,33 +1,17 @@
- [
-    {
-        "title": "🔥 Solo Leveling Finale!",
-        "description": "Mind-blowing final episode against the Ant King!",
-        "image": "https://i.imgur.com/bKnDgLq.jpg"
-    },
-    {
-        "title": "🍥 Naruto Minato Spin-Off!",
-        "description": "Confirmed for Fall 2025. Konoha’s past returns!",
-        "image": "https://i.imgur.com/LsP1XvD.jpg"
-    },
-    {
-        "title": "🚀 One Piece Live-Action Season 2!",
-        "description": "Coming soon to Netflix!",
-        "image": "https://i.imgur.com/I9POuLV.jpg"
-    },
-    {
-        "title": "🎉 Attack on Titan Final Season!",
-        "description": "The epic conclusion is near!",
-        "image": "https://i.imgur.com/9yy9XPl.jpg"
-    },
-    {
-        "title": "👑 Bleach Thousand-Year Blood War!",
-        "description": "The war between Shinigami and Quincy intensifies!",
-        "image": "https://i.imgur.com/1zVrGb9.jpg"
-    },
-    {
-        "title": "🔮 Jujutsu Kaisen Season 2!",
-        "description": "The curse wars continue!",
-        "<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F571abd61e3214001fb3b9966%2F63bf89a9-6e3e-4776-b0af-436425cc77d1%2FJujutsu%2BKaisen%2BRed%2BAka%2BColoring%2BBook.jpg&tbnid=ZEIt-8pA81RxrM&vet=1&imgrefurl=https%3A%2F%2Fusa.kinokuniya.com%2Fjujutsu-kaisen&docid=ePN-0Dy7eGZD_M&w=848&h=1200&source=sh%2Fx%2Fim%2Fm1%2F2&kgs=fb2d2435341e17c5"Jujutsu Kaisen Season 2!">"
-    }
-
-
+[
+  {
+    "title": "🔥 Solo Leveling Finale Airs!",
+    "description": "Sung Jin-Woo faces the Ant King in an epic battle. Fans call it the best episode yet!",
+    "image": "https://i.imgur.com/XM0nGRG.png"
+  },
+  {
+    "title": "🍥 Naruto Spin-Off Announced!",
+    "description": "Minato Namikaze spin-off confirmed for Fall 2025.",
+    "image": "https://i.imgur.com/qXXQkYn.png"
+  },
+  {
+    "title": "🚀 One Piece Live Action S2!",
+    "description": "Netflix confirms continuation with new cast insights.",
+    "image": "https://i.imgur.com/4IgLzt9.png"
+  }
+]
