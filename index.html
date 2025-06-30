@@ -214,5 +214,28 @@
       })
       .catch(error => console.error('Error loading updates:', error));
   </script>
+<script>
+  fetch('updates.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('updates-container');
+      data.forEach(update => {
+        const card = document.createElement('div');
+        card.innerHTML = `
+          <h3>${update.title}</h3>
+          <p>${update.description}</p>
+          <img src="${update.image}" alt="${update.title}" style="max-width: 100%; border-radius: 12px;" />
+        `;
+        card.style.padding = '1rem';
+        card.style.border = '1px solid #ccc';
+        card.style.borderRadius = '8px';
+        card.style.backgroundColor = '#fff';
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading updates:', error);
+    });
+</script>
 </body>
 </html>
