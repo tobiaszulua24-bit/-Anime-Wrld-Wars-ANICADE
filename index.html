@@ -214,29 +214,5 @@
       })
       .catch(error => console.error('Error loading updates:', error));
   </script>
-  fetch('https://tresforwrld.github.io/-Anime-Wrld-Wars-ANICADE/updates.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('updates-container');
-      data.forEach(update => {
-        const card = document.createElement('div');
-        card.classList.add('update-item');
-        card.style.padding = '1rem';
-        card.style.marginBottom = '2rem';
-        card.style.border = '1px solid #ccc';
-        card.style.borderRadius = '10px';
-        card.style.backgroundColor = '#f5f5f5';
-        card.innerHTML = `
-          <h3>${update.title}</h3>
-          <p>${update.description}</p>
-          ${update.image ? `<img src="${update.image}" alt="${update.title}" style="max-width:100%; border-radius:12px; box-shadow:0 0 8px rgba(0,0,0,0.2); margin-top:1rem;" />` : ''}
-        `;
-        container.appendChild(card);
-      });
-    })
-    .catch(error => {
-      console.error('Error loading updates:', error);
-    });
-</script>
 </body>
 </html>                                    </html>
