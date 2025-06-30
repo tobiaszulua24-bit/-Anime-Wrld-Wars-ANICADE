@@ -215,7 +215,7 @@
       .catch(error => console.error('Error loading updates:', error));
   </script>
 <script>
-  fetch('updates.json')
+  fetch('https://tresforwrld.github.io/-Anime-Wrld-Wars-ANICADE/updates.json')
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('updates-container');
