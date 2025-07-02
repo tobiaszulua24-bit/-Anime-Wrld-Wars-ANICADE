@@ -175,5 +175,20 @@ body.dark-mode .toggle-btn {
   <footer>
     &copy; 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
   </footer>
+<script>
+  // Dark mode toggle with localStorage
+  function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  }
+
+  // Load saved theme
+  window.onload = function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  };
+</script>
 </body>
 </html>
