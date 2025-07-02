@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  ...
+  <!-- OneSignal Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "7037d408-5910-49f0-b020-15063e85c59b",
+    });
+  });
+</script>
+...
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1P5622D5L"></script>
   <script>
