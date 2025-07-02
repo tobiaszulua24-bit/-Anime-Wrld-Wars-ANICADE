@@ -239,5 +239,14 @@
       })
       .catch(error => console.error('Error loading updates:', error));
   </script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "7037d408-5910-49f0-b020-15063e85c59b",
+    });
+  });
+</script>
 </body>
 </html>                                    </html>
