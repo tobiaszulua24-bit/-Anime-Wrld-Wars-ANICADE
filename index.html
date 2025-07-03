@@ -20,12 +20,14 @@
       --accent-blue: #1e88e5;
       --accent-yellow: #fbc02d;
       --gray-dark: #212121;
+      --gray-light: #f5f5f5;
     }
     body {
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     header {
       background-color: var(--gray-dark);
@@ -50,6 +52,7 @@
       color: var(--bg-color);
       text-decoration: none;
       font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
     nav a:hover {
       color: var(--accent-yellow);
@@ -60,10 +63,29 @@
       margin: 2rem auto;
       padding: 0 1rem;
     }
+    section {
+      margin-bottom: 3.5rem;
+    }
     h2 {
       border-left: 6px solid var(--accent-red);
       padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
       color: var(--accent-red);
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
     }
     a.button {
       display: inline-block;
@@ -74,7 +96,42 @@
       font-weight: 800;
       text-decoration: none;
       box-shadow: 0 0 15px var(--accent-red);
+      transition: background-color 0.3s ease;
       margin-top: 1rem;
+    }
+    a.button:hover {
+      background-color: #b71c1c;
+      box-shadow: 0 0 20px #b71c1c;
+    }
+    footer {
+      background-color: var(--gray-dark);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: var(--accent-blue);
+      text-shadow: 0 0 6px var(--accent-blue);
+    }
+    .update-item img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    body.dark-mode header,
+    body.dark-mode footer,
+    body.dark-mode nav {
+      background-color: #1e1e1e;
+      color: #fbc02d;
+    }
+    body.dark-mode nav a {
+      color: #fbc02d;
+    }
+    body.dark-mode nav a:hover {
+      color: #fff;
+      text-shadow: none;
     }
     .toggle-btn {
       position: fixed;
@@ -89,57 +146,18 @@
       font-weight: bold;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       z-index: 9999;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .update-item {
-      margin-bottom: 2rem;
-      background: #f5f5f5;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .update-item img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-top: 1rem;
-    }
-    .chatbot-iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
-      margin-top: 2rem;
-    }
-    footer {
-      background-color: var(--gray-dark);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      color: var(--accent-blue);
-      text-shadow: 0 0 6px var(--accent-blue);
-    }
-
-    /* Dark mode */
-    body.dark-mode {
-      background-color: #121212;
-      color: #eee;
-    }
-    body.dark-mode header,
-    body.dark-mode footer,
-    body.dark-mode nav {
-      background-color: #1e1e1e;
-      color: #fbc02d;
-    }
-    body.dark-mode nav a {
-      color: #fbc02d;
+    .toggle-btn:hover {
+      background-color: #e6b800;
     }
   </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
-
   <header>Anime Wrld Wars | ANICADE |</header>
-  <div style="text-align: center;">
+
+  <div style="text-align: center; margin-top: -1.5rem; margin-bottom: 1rem;">
     <img src="https://i.postimg.cc/qznXCMWh/Anime-Wrld-Wars-20250623-081403.jpg"
          alt="ANICADE PFP"
          style="width: 130px; height: 130px; border-radius: 50%; box-shadow: 0 0 10px #fbc02d;" />
@@ -147,32 +165,55 @@
 
   <nav>
     <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#updates">Updates</a>
-    <a href="#about">ANICADE Ai™</a>
-    <a href="#contact">Contact</a>
+    <a href="#media">Media</a>
+    <a href="#reviews">Reviews</a>
+    <a href="community.html">Community</a>
+    <a href="community.html#contact">Contact</a>
+    <a href="#events">Events</a>
   </nav>
 
   <main>
     <section id="home">
-      <h2>Welcome</h2>
-      <p>🎌 Dive into daily anime updates, edits, memes, and exclusive ANICADE content!</p>
+      <h2>Welcome to Anime Wrld Wars | ANICADE |</h2>
+      <p>🎌 Your ultimate anime hub. Dive into daily anime updates, epic memes, waifu spotlights, PFP drops, fan art showcases & exclusive content.</p>
+      <p>⚡ Whether you're here to chill, battle, or vibe — join the anime revolution today!</p>
+      <div style="text-align: center;">
+        <a href="https://bit.ly/AnimeANICADE" target="_blank" class="button">Reload Hub</a>
+      </div>
     </section>
 
     <section id="updates">
       <h2>Latest Anime Updates</h2>
-      <div id="updates-container">
-        <p>Loading updates...</p>
-      </div>
+      <div id="updates-container"></div>
     </section>
 
-    <section id="about">
-      <h2>Talk to ANICADE Ai™ 🤖</h2>
-      <p>Need help, ideas, or just wanna vibe with the bot? ANICADE Ai™ is here 24/7!</p>
-      <iframe class="chatbot-iframe" src="https://www.chatbase.co/chatbot-iframe/xda32KgOFfKmwpwKmpWtw"></iframe>
+    <section id="media">
+      <h2>Featured Media</h2>
+      <p>Explore a collection of community creations — edits, memes, and fan art made by and for the ANICADE family!</p>
+    </section>
+
+    <section id="reviews">
+      <h2>Community Reviews ⭐</h2>
+      <blockquote>
+        “This anime community is 🔥🔥🔥 Best edits, best vibes!”<br/>
+        <strong>– Otaku_King</strong>
+      </blockquote>
+      <blockquote>
+        “The events and giveaways are insane! Happy to be part of ANICADE.”<br/>
+        <strong>– AnimeQueen_77</strong>
+      </blockquote>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p>🎉 <strong>July 27 — ANICADE’s 1st Anniversary!</strong> Join us as we celebrate 1 year of anime battles, edits, and unity. Epic giveaways and fan surprises await!</p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>Contact Us</h2>
+      <p>Got questions, feedback, or ideas? Reach out anytime!</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:tresforzulu@gmail.com">tresforzulu@gmail.com</a></li>
         <li><strong>NGL:</strong> <a href="https://ngl.link/anime_wrld_wars_anicade_admin11" target="_blank">Send Feedback</a></li>
@@ -184,31 +225,39 @@
     © 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
   </footer>
 
-  <!-- Load updates.json -->
+  <!-- Scripts -->
   <script>
-    fetch('updates.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('updates-container');
-        container.innerHTML = '';
-        data.forEach(update => {
-          const div = document.createElement('div');
-          div.className = 'update-item';
-          div.innerHTML = `
-            <h3>${update.title}</h3>
-            <p>${update.description}</p>
-            ${update.image ? `<img src="${update.image}" alt="${update.title}"/>` : ''}
-          `;
-          container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        console.error('Failed to load updates:', err);
-        document.getElementById('updates-container').innerHTML = '<p style="color:red;">⚠️ Failed to load updates.</p>';
-      });
+    function toggleMode() {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('mode', isDark ? 'dark' : 'light');
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const mode = localStorage.getItem('mode');
+      if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+
+      // Load updates
+      fetch('updates.json')
+        .then(res => res.json())
+        .then(updates => {
+          const container = document.getElementById('updates-container');
+          updates.forEach(update => {
+            const div = document.createElement('div');
+            div.className = 'update-item';
+            div.innerHTML = `
+              <h3>${update.title}</h3>
+              <p>${update.description}</p>
+              ${update.image ? `<img src="${update.image}" alt="${update.title}" />` : ''}
+            `;
+            container.appendChild(div);
+          });
+        })
+        .catch(error => console.error('Error loading updates:', error));
+    });
   </script>
 
-  <!-- Chatbase Floating Chatbot -->
+  <!-- Chatbase Chatbot (ANICADE Ai™) -->
   <script>
     window.embeddedChatbotConfig = {
       chatbotId: "xda32KgOFfKmwpwKmpWtw",
@@ -217,17 +266,5 @@
   </script>
   <script src="https://www.chatbase.co/embed.min.js" defer></script>
 
-  <!-- Dark Mode -->
-  <script>
-    function toggleMode() {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('mode', isDark ? 'dark' : 'light');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const mode = localStorage.getItem('mode');
-      if (mode === 'dark') document.body.classList.add('dark-mode');
-    });
-  </script>
 </body>
 </html>
