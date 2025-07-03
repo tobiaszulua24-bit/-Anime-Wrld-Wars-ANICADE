@@ -148,11 +148,16 @@
       z-index: 9999;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .toggle-btn:hover {
-      background-color: #e6b800;
-    }
-  </style>
-</head>
+    .toggle-btn:hover {  
+    background-color: #e6b800;  
+  }
+
+  /* Move OneSignal notification icon up */  
+  #onesignal-bell-container.onesignal-reset {  
+    bottom: 90px !important; /* You can adjust this value */  
+  }  
+</style>
+</head>  
 <body>
   <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
   <header>Anime Wrld Wars | ANICADE |</header>
