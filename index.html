@@ -407,5 +407,37 @@ document.querySelectorAll("#floatingNav a").forEach(link => {
   });
 });
 </script>
+<script>
+  async function loadAnimeNews() {
+    const proxyUrl = "https://api.allorigins.win/get?url=";
+    const feedUrl = encodeURIComponent("https://www.animenewsnetwork.com/all/rss.xml");
+
+    try {
+      const response = await fetch(`${proxyUrl}${feedUrl}`);
+      const data = await response.json();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+
+      const items = xmlDoc.querySelectorAll("item");
+      const feedContainer = document.getElementById("news-feed");
+      feedContainer.innerHTML = "";
+
+      for (let i = 0; i < 5; i++) {
+        const item = items[i];
+        const title = item.querySelector("title").textContent;
+        const link = item.querySelector("link").textContent;
+
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+        feedContainer.appendChild(li);
+      }
+    } catch (error) {
+      console.error("Failed to fetch anime news:", error);
+      document.getElementById("news-feed").innerHTML = "<li>Could not load news. Please try again later.</li>";
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", loadAnimeNews);
+</script>
 </body>
 </html>
