@@ -280,15 +280,37 @@
       .catch(error => console.error('Error loading updates:', error));
   </script>
 
-  <script>
-    // OneSignal initialization
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-      await OneSignal.init({
-        appId: "7037d408-5910-49f0-b020-15063e85c59b",
+<!-- Chatbase Chatbot (ANICADE Ai™) -->
+<script>
+  (function(){
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...args) => {
+        if (!window.chatbase.q) window.chatbase.q = [];
+        window.chatbase.q.push(args);
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === "q") return target.q;
+          return (...args) => target(prop, ...args);
+        }
       });
-    });
-  </script>
+    }
+
+    const onLoad = function() {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "xda32KgOFfKmwpwKmpWtw";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
+
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
+  })();
+</script>
 
   <!-- Chatbase Chatbot (ANICADE Ai™) -->
   <script>
