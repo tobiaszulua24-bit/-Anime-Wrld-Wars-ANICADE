@@ -256,10 +256,10 @@
       </div>
     </section>
 
-    <section id="anime-news">
+   <section id="anime-news">
   <h2>📰 Latest Anime News</h2>
   <ul id="news-feed">
-    <li>Loading latest anime news...</li>
+    <li>Loading anime news...</li>
   </ul>
 </section>
 
@@ -395,7 +395,7 @@
     const floatingNav = document.getElementById("floatingNav");
 
     menuBtn.addEventListener("click", () => {
-      floatingNav.classList.toggle("hidden");
+     floatingNav.classList.toggle("hidden");
     });
   });
 </script>
@@ -408,30 +408,30 @@ document.querySelectorAll("#floatingNav a").forEach(link => {
 });
 </script>
   <script>
-fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.animenewsnetwork.com/all/rss.xml'))
-  .then(response => {
-    if (!response.ok) throw new Error('Network response was not ok');
-    return response.json();
-  })
-  .then(data => {
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(data.contents, 'text/xml');
-    const items = xml.querySelectorAll('item');
-    const newsFeed = document.getElementById('news-feed');
-    newsFeed.innerHTML = '';
+  fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.animenewsnetwork.com/all/rss.xml'))
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to fetch');
+      return response.json();
+    })
+    .then(data => {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(data.contents, "text/xml");
+      const items = xml.querySelectorAll("item");
+      const newsFeed = document.getElementById("news-feed");
+      newsFeed.innerHTML = "";
 
-    for (let i = 0; i < Math.min(5, items.length); i++) {
-      const title = items[i].querySelector('title').textContent;
-      const link = items[i].querySelector('link').textContent;
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
-      newsFeed.appendChild(li);
-    }
-  })
-  .catch(error => {
-    document.getElementById('news-feed').innerHTML = "<li>Could not load news. Please try again later.</li>";
-    console.error("News Fetch Error:", error);
-  });
+      for (let i = 0; i < Math.min(5, items.length); i++) {
+        const title = items[i].querySelector("title").textContent;
+        const link = items[i].querySelector("link").textContent;
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link}" target="_blank" style="color:#fbc02d;">${title}</a>`;
+        newsFeed.appendChild(li);
+      }
+    })
+    .catch(error => {
+      document.getElementById("news-feed").innerHTML = "<li>❌ Could not load news. Please try again later.</li>";
+      console.error("Anime news fetch error:", error);
+    });
 </script>
 </body>
 </html>
