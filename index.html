@@ -375,5 +375,15 @@
       }
     })();
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menuBtn");
+    const floatingNav = document.getElementById("floatingNav");
+
+    menuBtn.addEventListener("click", () => {
+      floatingNav.classList.toggle("hidden");
+    });
+  });
+</script>
 </body>
 </html>
