@@ -4,12 +4,21 @@
   <title>Chatbase Test</title>
 </head>
 <body>
+  <h1>Welcome to ANICADE AI™ Test</h1>
+
   <script>
     window.embeddedChatbotConfig = {
       chatbotId: "xda32KgOFfKmwpwKmpWtw",
       domain: "https://www.chatbase.co"
     };
   </script>
-  <script src="https://www.chatbase.co/embed.min.js" defer></script>
+
+  <!-- This line below was missing attributes! -->
+  <script 
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="xda32KgOFfKmwpwKmpWtw"
+    domain="https://www.chatbase.co"
+    defer>
+  </script>
 </body>
 </html>
