@@ -156,9 +156,70 @@
     #onesignal-bell-container.onesignal-reset {
       bottom: 90px !important;
     }
+/* Floating Menu Button */
+.menu-btn {
+  position: fixed;
+  top: 4.5rem; /* Below toggle button */
+  right: 1rem;
+  z-index: 9999;
+  background: var(--accent-yellow);
+  color: var(--gray-dark);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Floating Nav */
+.floating-nav {
+  position: fixed;
+  top: 8rem;
+  right: 1rem;
+  background: var(--gray-dark);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  z-index: 9998;
+}
+.floating-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.floating-nav ul li {
+  margin: 0.6rem 0;
+}
+.floating-nav ul li a {
+  color: var(--accent-yellow);
+  text-decoration: none;
+  font-weight: bold;
+}
+.floating-nav.hidden {
+  display: none;
+}
   </style>
 <body>
   <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+<!-- Floating Menu Button -->
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<!-- Floating Nav Menu -->
+<nav id="floatingNav" class="floating-nav hidden">
+  <ul>
+    <li><a href="#home">🏠 Home</a></li>
+    <li><a href="#about">📖 About</a></li>
+    <li><a href="#updates">📰 Updates</a></li>
+    <li><a href="#media">🎨 Media</a></li>
+    <li><a href="#reviews">⭐ Reviews</a></li>
+    <li><a href="community.html">👥 Community</a></li>
+    <li><a href="community.html#contact">📩 Contact</a></li>
+    <li><a href="#events">🎉 Events</a></li>
+  </ul>
+</nav>
   <header>Anime Wrld Wars | ANICADE |</header>
 
   <div style="text-align: center; margin-top: -1.5rem; margin-bottom: 1rem;">
