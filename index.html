@@ -408,7 +408,7 @@ document.querySelectorAll("#floatingNav a").forEach(link => {
 });
 </script>
   <script>
-  fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.animenewsnetwork.com/all/rss.xml'))
+ console.log("Fetching anime news…"); fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.animenewsnetwork.com/all/rss.xml'))
     .then(response => {
       if (!response.ok) throw new Error('Failed to fetch');
       return response.json();
