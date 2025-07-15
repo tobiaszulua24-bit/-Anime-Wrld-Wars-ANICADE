@@ -396,21 +396,39 @@
   </script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("modeToggle");
     const menuBtn = document.getElementById("menuBtn");
     const floatingNav = document.getElementById("floatingNav");
 
+    // Restore dark mode if previously saved
+    const savedMode = localStorage.getItem("mode");
+    const isDark = savedMode === "dark";
+    document.body.classList.toggle("dark-mode", isDark);
+    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    toggleBtn.style.backgroundColor = isDark ? "#1e1e1e" : "#fbc02d";
+    toggleBtn.style.color = isDark ? "#fbc02d" : "#000";
+
+    // Toggle dark/light mode
+    toggleBtn.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("mode", isDark ? "dark" : "light");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+      toggleBtn.style.backgroundColor = isDark ? "#1e1e1e" : "#fbc02d";
+      toggleBtn.style.color = isDark ? "#fbc02d" : "#000";
+    });
+
+    // Floating menu toggle
     menuBtn.addEventListener("click", () => {
-     floatingNav.classList.toggle("hidden");
+      floatingNav.classList.toggle("hidden");
+    });
+
+    // Auto-close menu when a link is clicked
+    document.querySelectorAll("#floatingNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        floatingNav.classList.add("hidden");
+      });
     });
   });
-</script>
-<script>
-// Auto-close menu when link is clicked
-document.querySelectorAll("#floatingNav a").forEach(link => {
-  link.addEventListener("click", () => {
-    floatingNav.classList.add("hidden");
-  });
-});
 </script>
   <script>
   console.log("Fetching anime news…");
