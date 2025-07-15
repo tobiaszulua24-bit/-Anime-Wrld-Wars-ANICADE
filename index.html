@@ -13,25 +13,6 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
-#anime-news {
-  padding: 2rem 0;
-}
-#anime-news h2 {
-  color: var(--accent-yellow);
-}
-#news-feed li {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-#news-feed a {
-  color: var(--accent-blue);
-  text-decoration: none;
-}
-#news-feed a:hover {
-  color: var(--accent-yellow);
-  text-decoration: underline;
-}
     :root {
       --bg-color: #ffffff;
       --text-color: #000000;
@@ -91,13 +72,6 @@
       margin-bottom: 1rem;
       font-size: 1.8rem;
       color: var(--accent-red);
-      word-break: break-word;
-      overflow-wrap: break-word;
-    }
-    @media (max-width: 600px) {
-      h2 {
-        font-size: 1.5rem;
-      }
     }
     p, ul {
       font-size: 1.1rem;
@@ -135,6 +109,8 @@
       border-radius: 12px;
       margin: 1rem 0;
     }
+
+    /* Dark Mode */
     body.dark-mode {
       background-color: #121212;
       color: #eee;
@@ -152,92 +128,96 @@
       color: #fff;
       text-shadow: none;
     }
+
+    /* Toggle Button */
     .toggle-btn {
       position: fixed;
       top: 1rem;
       right: 1rem;
-      background-color: #fbc02d;
-      color: black;
-      padding: 0.6rem 1rem;
+      background-color: #fbc02d; /* light mode bg */
+      color: #000;               /* light mode icon */
+      padding: 0.6rem;
       border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.3rem;
       font-weight: bold;
+      cursor: pointer;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       z-index: 9999;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s, color 0.3s;
     }
-   .toggle-btn:hover {
-      background-color: #e6b800;
+    body.dark-mode .toggle-btn {
+      background-color: #1e1e1e; /* dark mode bg */
+      color: #fbc02d;            /* dark mode icon */
     }
 
-    /* Move OneSignal notification icon up */
-    #onesignal-bell-container.onesignal-reset {
-      bottom: 90px !important;
+    /* Floating Menu Button */
+    .menu-btn {
+      position: fixed;
+      top: 4.5rem;
+      right: 1rem;
+      z-index: 9999;
+      background: var(--accent-yellow);
+      color: var(--gray-dark);
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-/* Floating Menu Button */
-.menu-btn {
-  position: fixed;
-  top: 4.5rem; /* Below toggle button */
-  right: 1rem;
-  z-index: 9999;
-  background: var(--accent-yellow);
-  color: var(--gray-dark);
-  border: none;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
 
-/* Floating Nav */
-.floating-nav {
-  position: fixed;
-  top: 8rem;
-  right: 1rem;
-  background: var(--gray-dark);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
-  z-index: 9998;
-}
-.floating-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.floating-nav ul li {
-  margin: 0.6rem 0;
-}
-.floating-nav ul li a {
-  color: var(--accent-yellow);
-  text-decoration: none;
-  font-weight: bold;
-}
-.floating-nav.hidden {
-  display: none;
-}
+    /* Floating Nav */
+    .floating-nav {
+      position: fixed;
+      top: 8rem;
+      right: 1rem;
+      background: var(--gray-dark);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      z-index: 9998;
+    }
+    .floating-nav.hidden {
+      display: none;
+    }
+    .floating-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .floating-nav ul li {
+      margin: 0.6rem 0;
+    }
+    .floating-nav ul li a {
+      color: var(--accent-yellow);
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
+</head>
 <body>
-  <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">
-  🌙
-</button>
-<!-- Floating Nav Menu -->
-<nav id="floatingNav" class="floating-nav hidden">
-  <ul>
-    <li><a href="#home">🏠 Home</a></li>
-    <li><a href="about.html">📖 About</a></li>
-    <li><a href="#updates">📰 Updates</a></li>
-    <li><a href="media.html">Media</a></li>
-    <li><a href="#reviews">⭐ Reviews</a></li>
-    <li><a href="community.html">👥 Community</a></li>
-    <li><a href="community.html#contact">📩 Contact</a></li>
-    <li><a href="#events">🎉 Events</a></li>
-  </ul>
-</nav>
+  <!-- Dark/Light Toggle -->
+  <button class="toggle-btn" id="modeToggle">🌙</button>
+  <!-- Floating Menu Button -->
+  <button class="menu-btn" id="menuBtn">☰</button>
+
+  <!-- Floating Nav Menu -->
+  <nav id="floatingNav" class="floating-nav hidden">
+    <ul>
+      <li><a href="#home">🏠 Home</a></li>
+      <li><a href="about.html">📖 About</a></li>
+      <li><a href="#updates">📰 Updates</a></li>
+      <li><a href="media.html">🖼 Media</a></li>
+      <li><a href="#reviews">⭐ Reviews</a></li>
+      <li><a href="community.html">👥 Community</a></li>
+      <li><a href="community.html#contact">📩 Contact</a></li>
+      <li><a href="#events">🎉 Events</a></li>
+    </ul>
+  </nav>
+
   <header>Anime Wrld Wars | ANICADE |</header>
 
   <div style="text-align: center; margin-top: -1.5rem; margin-bottom: 1rem;">
@@ -245,9 +225,10 @@
          alt="ANICADE PFP"
          style="width: 130px; height: 130px; border-radius: 50%; box-shadow: 0 0 10px #fbc02d;" />
   </div>
+
   <main>
     <section id="home">
-      <h2>Welcome to Anime Wrld Wars |ANICADE|</h2>
+      <h2>Welcome to Anime Wrld Wars | ANICADE |</h2>
       <p>🎌 Your ultimate anime hub. Dive into daily anime updates, epic memes, waifu spotlights, PFP drops, fan art showcases & exclusive content.</p>
       <p>⚡ Whether you're here to chill, battle, or vibe — join the anime revolution today!</p>
       <div style="text-align: center;">
@@ -255,17 +236,17 @@
       </div>
     </section>
 
-   <section id="anime-news">
-  <h2>📰 Latest Anime News</h2>
-  <ul id="news-feed">
-    <li>Loading anime news...</li>
-  </ul>
-</section>
+    <section id="anime-news">
+      <h2>📰 Latest Anime News</h2>
+      <ul id="news-feed">
+        <li>Loading anime news...</li>
+      </ul>
+    </section>
 
-<section id="updates">
-  <h2>Latest Anime Updates</h2>
-  <div id="updates-container"></div>
-</section>
+    <section id="updates">
+      <h2>Latest Anime Updates</h2>
+      <div id="updates-container"></div>
+    </section>
 
     <section id="media">
       <h2>Featured Media</h2>
@@ -274,42 +255,29 @@
 
     <section id="reviews">
       <h2>Community Reviews ⭐</h2>
-      <blockquote>
-        “This anime community is 🔥🔥🔥 Best edits, best vibes!”<br/>
-        <strong>– Otaku_King</strong>
-      </blockquote>
-      <blockquote>
-        “The events and giveaways are insane! Happy to be part of ANICADE.”<br/>
-        <strong>– AnimeQueen_77</strong>
-      </blockquote>
+      <blockquote>“This anime community is 🔥🔥🔥 Best edits, best vibes!”<br/><strong>– Otaku_King</strong></blockquote>
+      <blockquote>“The events and giveaways are insane! Happy to be part of ANICADE.”<br/><strong>– AnimeQueen_77</strong></blockquote>
     </section>
 
     <section id="events">
       <h2>Upcoming Events</h2>
-   <div class="event-card" style="border: 2px solid #ff4d4d; padding: 20px; border-radius: 10px; background: #1a1a1a; color: #fff;">
-  <h3 style="font-size: 1.8em; color: #ffd700;">🎊 ANICADE ANNIVERSARY GIVEAWAY 🎊</h3>
-  <p><strong>🗓️ Date:</strong> July 27, 2025</p>
-  <p><strong>🎉 Celebrate one epic year of Anime WrldWars | ANICADE!</strong><br>
-  We're going all out with a <strong>legendary giveaway</strong> for 3 lucky winners:</p>
-
-  <ul style="list-style-type: '✨ '; padding-left: 1em;">
-    <li><strong>🎨 Fanart & Stickers Channel (500+ Followers)</strong><br>
-    <a href="https://whatsapp.com/channel/0029VakPy2o2ER6iIOkYIK3Q" target="_blank" style="color: #00ffff;">Join Now</a></li>
-
-    <li><strong>😂 Quotes & Comedy Channel (200+ Followers)</strong><br>
-    <a href="https://whatsapp.com/channel/0029VafzOi78PgsBHYRUjK2g" target="_blank" style="color: #00ffff;">Join Now</a></li>
-
-    <li><strong>🏆 Admin Spot in the Main Channel (14K+ Followers)</strong><br>
-    <a href="https://whatsapp.com/channel/0029VafKed7LY6d7ECh4Dv3x" target="_blank" style="color: #00ffff;">Enter the Wrld</a></li>
-  </ul>
-
-  <p><strong>🔥 How to Win:</strong> Stay active, engage daily, and show your anime energy!</p>
-
-  <img src="https://i.postimg.cc/7Z9zjJB2/file-00000000609461f8823189e7fe63d156.png" alt="ANICADE Giveaway" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 10px #ff4d4d;">
-  
-  <p style="margin-top: 20px;">🎭 <strong>Tresfor Wrld — Where Legends Rise</strong> ✌️🔥<br>
-  🔗 <strong>Powered by Anime WrldWars | ANICADE</strong> ⛩️</p>
-</div>
+      <div class="event-card" style="border: 2px solid #ff4d4d; padding: 20px; border-radius: 10px; background: #1a1a1a; color: #fff;">
+        <h3 style="font-size: 1.8em; color: #ffd700;">🎊 ANICADE ANNIVERSARY GIVEAWAY 🎊</h3>
+        <p><strong>🗓️ Date:</strong> July 27, 2025</p>
+        <p><strong>🎉 Celebrate one epic year of Anime WrldWars | ANICADE!</strong><br>
+        We're going all out with a <strong>legendary giveaway</strong> for 3 lucky winners:</p>
+        <ul style="list-style-type: '✨ '; padding-left: 1em;">
+          <li><strong>🎨 Fanart & Stickers Channel (500+ Followers)</strong><br>
+            <a href="https://whatsapp.com/channel/0029VakPy2o2ER6iIOkYIK3Q" target="_blank" style="color: #00ffff;">Join Now</a></li>
+          <li><strong>😂 Quotes & Comedy Channel (200+ Followers)</strong><br>
+            <a href="https://whatsapp.com/channel/0029VafzOi78PgsBHYRUjK2g" target="_blank" style="color: #00ffff;">Join Now</a></li>
+          <li><strong>🏆 Admin Spot in the Main Channel (14K+ Followers)</strong><br>
+            <a href="https://whatsapp.com/channel/0029VafKed7LY6d7ECh4Dv3x" target="_blank" style="color: #00ffff;">Enter the Wrld</a></li>
+        </ul>
+        <p style="margin-top: 20px;">🎭 <strong>Tresfor Wrld — Where Legends Rise</strong> ✌️🔥<br>
+          🔗 <strong>Powered by Anime WrldWars | ANICADE</strong> ⛩️
+        </p>
+      </div>
     </section>
 
     <section id="contact">
@@ -322,141 +290,87 @@
     </section>
   </main>
 
-  <footer>
-    © 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥
-  </footer>
-<!-- Scripts -->
+  <footer>© 2025 Anime Wrld Wars | ANICADE | — BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥</footer>
+
+  <!-- Scripts -->
   <script>
-  function toggleMode() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('mode', isDark ? 'dark' : 'light');
-    document.getElementById('modeToggle').textContent = isDark ? '☀️' : '🌙';
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const mode = localStorage.getItem('mode');
-    const icon = document.getElementById('modeToggle');
-    
-    if (mode === 'dark') {
-      document.body.classList.add('dark-mode');
-      icon.textContent = '☀️';
-    } else {
-      icon.textContent = '🌙';
-    }
-
-    // Load updates
-    fetch('updates.json')
-      .then(res => res.json())
-      .then(updates => {
-        const container = document.getElementById('updates-container');
-        updates.forEach(update => {
-          const div = document.createElement('div');
-          div.className = 'update-item';
-          div.innerHTML = `
-            <h3>${update.title}</h3>
-            <p>${update.description}</p>
-            ${update.image ? `<img src="${update.image}" alt="${update.title}" />` : ''}
-          `;
-          container.appendChild(div);
-        });
-      })
-      .catch(error => console.error('Error loading updates:', error));
-  });
-</script>
-  <!-- ✅ Chatbase Chatbot (ANICADE Ai™) - Final Version -->
-  <script>
-    (function(){
-      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...args) => {
-          if (!window.chatbase.q) window.chatbase.q = [];
-          window.chatbase.q.push(args);
-        };
-        window.chatbase = new Proxy(window.chatbase, {
-          get(target, prop) {
-            if (prop === "q") return target.q;
-            return (...args) => target(prop, ...args);
-          }
-        });
-      }
-
-      const onLoad = function() {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "xda32KgOFfKmwpwKmpWtw";
-        script.domain = "www.chatbase.co";
-        document.body.appendChild(script);
-      };
-
-      if (document.readyState === "complete") {
-        onLoad();
-      } else {
-        window.addEventListener("load", onLoad);
-      }
-    })();
-  </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("modeToggle");
-    const menuBtn = document.getElementById("menuBtn");
-    const floatingNav = document.getElementById("floatingNav");
-
-    // Restore dark mode if previously saved
-    const savedMode = localStorage.getItem("mode");
-    const isDark = savedMode === "dark";
-    document.body.classList.toggle("dark-mode", isDark);
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
-    toggleBtn.style.backgroundColor = isDark ? "#1e1e1e" : "#fbc02d";
-    toggleBtn.style.color = isDark ? "#fbc02d" : "#000";
-
-    // Toggle dark/light mode
-    toggleBtn.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("mode", isDark ? "dark" : "light");
+    document.addEventListener("DOMContentLoaded", () => {
+      // Toggle Mode
+      const toggleBtn = document.getElementById("modeToggle");
+      const savedMode = localStorage.getItem("mode");
+      const isDark = savedMode === "dark";
+      document.body.classList.toggle("dark-mode", isDark);
       toggleBtn.textContent = isDark ? "☀️" : "🌙";
       toggleBtn.style.backgroundColor = isDark ? "#1e1e1e" : "#fbc02d";
       toggleBtn.style.color = isDark ? "#fbc02d" : "#000";
-    });
-
-    // Floating menu toggle
-    menuBtn.addEventListener("click", () => {
-      floatingNav.classList.toggle("hidden");
-    });
-
-    // Auto-close menu when a link is clicked
-    document.querySelectorAll("#floatingNav a").forEach(link => {
-      link.addEventListener("click", () => {
-        floatingNav.classList.add("hidden");
+      toggleBtn.addEventListener("click", () => {
+        const dark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("mode", dark ? "dark" : "light");
+        toggleBtn.textContent = dark ? "☀️" : "🌙";
+        toggleBtn.style.backgroundColor = dark ? "#1e1e1e" : "#fbc02d";
+        toggleBtn.style.color = dark ? "#fbc02d" : "#000";
       });
+
+      // Floating Menu
+      const menuBtn = document.getElementById("menuBtn");
+      const floatingNav = document.getElementById("floatingNav");
+      menuBtn.addEventListener("click", () => floatingNav.classList.toggle("hidden"));
+      document.querySelectorAll("#floatingNav a").forEach(link => {
+        link.addEventListener("click", () => floatingNav.classList.add("hidden"));
+      });
+
+      // Load Updates
+      fetch('updates.json')
+        .then(res => res.json())
+        .then(updates => {
+          const container = document.getElementById('updates-container');
+          updates.forEach(u => {
+            const div = document.createElement('div');
+            div.className = 'update-item';
+            div.innerHTML = `<h3>${u.title}</h3><p>${u.description}</p>${u.image?`<img src="${u.image}" alt="${u.title}" />`:''}`;
+            container.appendChild(div);
+          });
+        })
+        .catch(console.error);
+
+      // Anime News
+      fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://myanimelist.net/rss/news.xml'))
+        .then(r => r.json())
+        .then(data => {
+          const xml = new DOMParser().parseFromString(data.contents, "text/xml");
+          const items = xml.querySelectorAll("item");
+          const feed = document.getElementById("news-feed");
+          feed.innerHTML = "";
+          items.forEach((it, i) => {
+            if(i<5){
+              const li = document.createElement('li');
+              li.innerHTML = `<a href="${it.querySelector('link').textContent}" target="_blank">${it.querySelector('title').textContent}</a>`;
+              feed.appendChild(li);
+            }
+          });
+        })
+        .catch(() => {
+          document.getElementById("news-feed").innerHTML = "<li>❌ Could not load news.</li>";
+        });
     });
-  });
-</script>
+  </script>
+
+  <!-- Chatbase Chatbot -->
   <script>
-  console.log("Fetching anime news…");
-
-  fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://myanimelist.net/rss/news.xml'))
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to fetch');
-      return response.json();
-    })
-    .then(data => {
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(data.contents, "text/xml");
-      const items = xml.querySelectorAll("item");
-      const newsFeed = document.getElementById("news-feed");
-      newsFeed.innerHTML = "";
-
-      for (let i = 0; i < Math.min(5, items.length); i++) {
-        const title = items[i].querySelector("title").textContent;
-        const link = items[i].querySelector("link").textContent;
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${link}" target="_blank" style="color:#fbc02d;">${title}</a>`;
-        newsFeed.appendChild(li);
+    (function(){
+      if (!window.chatbase || window.chatbase("getState")!=="initialized") {
+        window.chatbase=(...args)=>{(window.chatbase.q=window.chatbase.q||[]).push(args)};
+        window.chatbase=new Proxy(window.chatbase,{get(t,p){if(p==="q")return t.q;return(...a)=>t(p,...a)}});
       }
-    })
-    .catch(error => {
-      document.getElementById("news-feed").innerHTML = "<li>❌ Could not load news. Please try again later.</li>";
-      console.error("Anime news fetch error:", error);
-    });
-</script>
+      const onLoad=()=>{
+        const s=document.createElement("script");
+        s.src="https://www.chatbase.co/embed.min.js";
+        s.id="xda32KgOFfKmwpwKmpWtw";
+        document.body.appendChild(s);
+      };
+      document.readyState==="complete"?onLoad():window.addEventListener("load",onLoad);
+    })();
+  </script>
 </body>
 </html>
+```0
