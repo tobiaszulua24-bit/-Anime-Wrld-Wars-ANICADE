@@ -327,36 +327,42 @@
   </footer>
 <!-- Scripts -->
   <script>
-    function toggleMode() {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('mode', isDark ? 'dark' : 'light');
+  function toggleMode() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('mode', isDark ? 'dark' : 'light');
+    document.getElementById('modeToggle').textContent = isDark ? '☀️' : '🌙';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const mode = localStorage.getItem('mode');
+    const icon = document.getElementById('modeToggle');
+    
+    if (mode === 'dark') {
+      document.body.classList.add('dark-mode');
+      icon.textContent = '☀️';
+    } else {
+      icon.textContent = '🌙';
     }
-    window.addEventListener('DOMContentLoaded', () => {
-      const mode = localStorage.getItem('mode');
-      if (mode === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
 
-      // Load updates
-      fetch('updates.json')
-        .then(res => res.json())
-        .then(updates => {
-          const container = document.getElementById('updates-container');
-          updates.forEach(update => {
-            const div = document.createElement('div');
-            div.className = 'update-item';
-            div.innerHTML = `
-              <h3>${update.title}</h3>
-              <p>${update.description}</p>
-              ${update.image ? `<img src="${update.image}" alt="${update.title}" />` : ''}
-            `;
-            container.appendChild(div);
-          });
-        })
-        .catch(error => console.error('Error loading updates:', error));
-    });
-  </script>
-
+    // Load updates
+    fetch('updates.json')
+      .then(res => res.json())
+      .then(updates => {
+        const container = document.getElementById('updates-container');
+        updates.forEach(update => {
+          const div = document.createElement('div');
+          div.className = 'update-item';
+          div.innerHTML = `
+            <h3>${update.title}</h3>
+            <p>${update.description}</p>
+            ${update.image ? `<img src="${update.image}" alt="${update.title}" />` : ''}
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => console.error('Error loading updates:', error));
+  });
+</script>
   <!-- ✅ Chatbase Chatbot (ANICADE Ai™) - Final Version -->
   <script>
     (function(){
