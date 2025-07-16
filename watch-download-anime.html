@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Watch & Download Anime - Episode 1</title>
+  <title>Watch & Download Anime | ANICADE</title>
   <style>
     body {
       background: #121212;
@@ -11,12 +11,29 @@
       padding: 2rem;
       text-align: center;
     }
-    h1 {
+    header {
+      font-size: 2rem;
       color: #fbc02d;
+      margin-bottom: 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: #1e88e5;
+      margin-bottom: 0.5rem;
     }
     .video-frame {
-      margin: 2rem 0;
+      margin: 1rem auto;
+      max-width: 800px;
       box-shadow: 0 0 20px #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
     }
     a.button {
       display: inline-block;
@@ -32,36 +49,28 @@
     a.button:hover {
       background: #1565c0;
     }
+    p.note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
-<body>  <h1>📺 Watch: [Anime Title] Episode 1</h1>  <!-- Embedded Google Drive Video Player -->  <div class="video-frame">
-    <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" width="100%" height="480" allow="autoplay" style="border:none;"></iframe>
-  </div>  <!-- Download and Watch Links --><a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=drivesdk" target="_blank" class="button">▶️ Watch Fullscreen</a> <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" target="_blank" class="button">📥 Download Episode</a>
-
-  <p style="margin-top: 2rem; font-size: 0.9rem; color: #aaa;">
-    Make sure you're logged into Google to stream properly on some devices.
-  </p></body>
-<section id="dandadan-s2-ep1" style="margin-bottom: 2rem;">
-  <h2>Dandadan Season 2 - Episode 1</h2>
-
-  <!-- Video embed (using Google Drive preview) -->
-  <iframe
-    src="https://drive.google.com/file/d/1U_K5LseK7bLinS5ZB6XJyR23UwQRu1u8/preview"
-    width="100%"
-    height="480"
-    allow="autoplay"
-    style="border: none; border-radius: 10px;"
-  ></iframe>
-
-  <!-- Download button -->
-  <p style="margin-top: 1rem;">
-    <a href="https://drive.google.com/uc?export=download&id=1U_K5LseK7bLinS5ZB6XJyR23UwQRu1u8" 
-       class="button" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       style="background-color: #1e88e5; color: white; padding: 0.8rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 700;">
-      ⬇️ Download Dandadan S2 Ep 1
-    </a>
-  </p>
-</section>
+<body>
+  <header>🎬 Watch & Download Anime</header>  <!-- One Piece Volume 1 -->  <section id="one-piece-vol1">
+    <h2>One Piece – Volume 1</h2>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1E0mTiAAI8CDAmoR_zed_yZJVrtaju2ym/preview" allow="autoplay"></iframe>
+    </div>
+    <a href="https://drive.google.com/file/d/1E0mTiAAI8CDAmoR_zed_yZJVrtaju2ym/view?usp=drivesdk" target="_blank" class="button">▶️ Watch Fullscreen</a>
+    <a href="https://drive.google.com/uc?export=download&id=1E0mTiAAI8CDAmoR_zed_yZJVrtaju2ym" target="_blank" class="button">📥 Download Volume</a>
+  </section>  <!-- Dandadan Season 2 Episode 1 -->  <section id="dandadan-s2-ep1">
+    <h2>Dandadan – Season 2 Episode 1</h2>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1U_K5LseK7bLinS5ZB6XJyR23UwQRu1u8/preview" allow="autoplay"></iframe>
+    </div>
+    <a href="https://drive.google.com/file/d/1U_K5LseK7bLinS5ZB6XJyR23UwQRu1u8/view?usp=drivesdk" target="_blank" class="button">▶️ Watch Fullscreen</a>
+    <a href="https://drive.google.com/uc?export=download&id=1U_K5LseK7bLinS5ZB6XJyR23UwQRu1u8" target="_blank" class="button">📥 Download Episode</a>
+  </section>  <p class="note">Make sure you're logged into Google to stream properly on some devices.</p>
+</body>
 </html>
