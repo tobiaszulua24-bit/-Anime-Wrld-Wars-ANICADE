@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo Leveling - Chapter 1 | ANICADE</title>
+  <link rel="icon" href="https://i.imgur.com/AnimeANICADE_PFP.png" type="image/png" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .manga-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 850px;
+      padding: 1rem;
+    }
+
+    .manga-container img {
+      width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #333;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .manga-container {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Solo Leveling — Chapter 1 📖
+  </header>
+
+  <div class="manga-container">
+    <img src="https://i.postimg.cc/Gp3WK47S/IMG-20250716-012938-381.jpg" alt="Page 1">
+    <img src="https://i.postimg.cc/W3hQRQPG/Screenshot-20250716-013253.png" alt="Page 2">
+    <img src="https://i.postimg.cc/D0GH0L0m/Screenshot-20250716-013314.png" alt="Page 3">
+    <img src="https://i.postimg.cc/D0GH0L0m/Screenshot-20250716-013314.png" alt="Page 4">
+    <img src="https://i.postimg.cc/gcLfgFsd/Screenshot-20250716-013333.png" alt="Page 5">
+    <img src="https://i.postimg.cc/Z5HgWTbP/Screenshot-20250716-013346.png" alt="Page 6">
+    <img src="https://i.postimg.cc/xddZHW8w/Screenshot-20250716-013356.png" alt="Page 7">
+    <img src="https://i.postimg.cc/HLPhtB7V/Screenshot-20250716-013407.png" alt="Page 8">
+    <img src="https://i.postimg.cc/JnfYf0x8/Screenshot-20250716-013423.png" alt="Page 9">
+    <img src="https://i.postimg.cc/7hStw4t2/Screenshot-20250716-013435.png" alt="Page 10">
+    <img src="https://i.postimg.cc/QxrnSBVk/Screenshot-20250716-013443.png" alt="Page 11">
+    <img src="https://i.postimg.cc/HLjSjXPH/Screenshot-20250716-013457.png" alt="Page 12">
+    <img src="https://i.postimg.cc/xd76m8Wm/Screenshot-20250716-013514.png" alt="Page 13">
+    <img src="https://i.postimg.cc/3NQ9L6rJ/Screenshot-20250716-013522.png" alt="Page 14">
+    <img src="https://i.postimg.cc/mZ7mcbVc/Screenshot-20250716-013530.png" alt="Page 15">
+    <img src="https://i.postimg.cc/pXZkZqwR/Screenshot-20250716-013545.png" alt="Page 16">
+    <img src="https://i.postimg.cc/HkvzGjWN/Screenshot-20250716-013554.png" alt="Page 17">
+    <img src="https://i.postimg.cc/zf9kBMgS/Screenshot-20250716-013602.png" alt="Page 18">
+    <img src="https://i.postimg.cc/bJk92T0X/Screenshot-20250716-013616.png" alt="Page 19">
+    <img src="https://i.postimg.cc/qqrXc3QN/Screenshot-20250716-013624.png" alt="Page 20">
+    <img src="https://i.postimg.cc/CLFszbzt/Screenshot-20250716-013635.png" alt="Page 21">
+    <img src="https://i.postimg.cc/JzFN6gPV/Screenshot-20250716-013651.png" alt="Page 22">
+    <img src="https://i.postimg.cc/DzbqtgMW/Screenshot-20250716-013658.png" alt="Page 23">
+    <img src="https://i.postimg.cc/W3LMjkB5/Screenshot-20250716-013718.png" alt="Page 24">
+    <img src="https://i.postimg.cc/4d6p33Zs/Screenshot-20250716-013727.png" alt="Page 25">
+    <img src="https://i.postimg.cc/C5JDj6z2/Screenshot-20250716-013742.png" alt="Page 26">
+    <img src="https://i.postimg.cc/02WDjFgM/Screenshot-20250716-013750.png" alt="Page 27">
+    <img src="https://i.postimg.cc/FFxj51Dx/Screenshot-20250716-013757.png" alt="Page 28">
+    <img src="https://i.postimg.cc/qvWKXKvp/Screenshot-20250716-013812.png" alt="Page 29 (Last)">
+  </div>
+
+  <footer>
+    BROUGHT TO YOU BY TRESFOR WRLD ✌️🔥 <br>
+    📌 Powered by Anime WrldWars | ANICADE
+  </footer>
+</body>
+</html>
